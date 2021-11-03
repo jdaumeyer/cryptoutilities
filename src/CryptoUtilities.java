@@ -152,7 +152,7 @@ public final class CryptoUtilities {
 
         n.multiply(temp);
         p.increment();
-        n.setFromInt(n.divide(m));
+        n.copyFrom(n.divide(m));
 
     }
 
