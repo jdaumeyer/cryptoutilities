@@ -143,8 +143,16 @@ public final class CryptoUtilities {
          * with the additional feature that every multiplication is followed
          * immediately by "reducing the result modulo m"
          */
+        NaturalNumber temp = n.newInstance();
 
-        // TODO - fill in body
+        if (!p.isZero()){
+            p.decrement();
+            powerMod(n, p, m);
+        }
+
+        n.multiply(temp);
+        p.increment();
+        n.setFromInt(n.divide(m));
 
     }
 
